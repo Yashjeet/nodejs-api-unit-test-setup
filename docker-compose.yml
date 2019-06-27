@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  node:
+    image: "node:8"
+    working_dir: /app
+    expose: 
+    - "3000"
+    ports:
+     - "3000:3000"
+    command: bash -c "mkdir -p /app && npm install && NODE_ENV=docker node_modules/nodemon/bin/nodemon.js app.js"
+    volumes :
+    - ./:/app
+
+
+ 
